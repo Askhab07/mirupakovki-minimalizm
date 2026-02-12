@@ -2,16 +2,23 @@ import React, { useState } from 'react';
 import Search from './Search';
 
 const Header = () => {
-        const [isActiveSearch, setIsActiveSearch] = useState(false);
+  const [isActiveSearch, setIsActiveSearch] = useState(false);
 
-    return (
-        <header className='h-20 p-5 pt-14 flex justify-between items-center'>
-           {
-            !isActiveSearch && <h2 className={`text-3xl font-bold transition-all duration-300 ease-in-out ${isActiveSearch ? 'opacity-0 -translate-x-5 w-0 ': 'opacity-100 translate-x-0'}`}>Мир упаковки</h2>
-           }
-            <Search isActiveSearch={isActiveSearch} setIsActiveSearch={setIsActiveSearch} />
-        </header>
-    );
+  return (
+    <header className="max-h-11/12 h-20 my-10 flex justify-between items-center">
+      {!isActiveSearch && (
+        <h2 className="text-2xl font-bold whitespace-nowrap">
+          Мир упаковки
+        </h2>
+      )}
+      <div className={isActiveSearch ? 'w-full flex justify-end' : ''}>
+        <Search
+          isActiveSearch={isActiveSearch}
+          setIsActiveSearch={setIsActiveSearch}
+        />
+      </div>
+    </header>
+  );
 };
 
 export default Header;

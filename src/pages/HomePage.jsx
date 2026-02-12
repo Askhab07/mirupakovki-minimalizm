@@ -1,10 +1,11 @@
-import React from 'react';
 import Header from '../components/Header';
+import Main from '../components/Main';
 
 const HomePage = () => {
     return (
-        <div className='min-w-[375px] min-h-screen bg-gray-500'>
+        <div className='min-h-screen '>
             <Header />
+            <Main />
         </div>
     );
 };
